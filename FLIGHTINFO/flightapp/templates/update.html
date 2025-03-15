@@ -1,0 +1,20 @@
+<html>
+{% extends 'base.html' %}
+{% block context %}
+<h1>Update Flightinfo Details</h1>
+<form method="post">
+
+Employee No  <input type="text" name="Flightnumber" value="{{flight.Flightnumber}}">
+    <br>
+Employee Name  <input type="text" name="Destination" value="{{flight.Destination}}">
+    <br>
+Employee Salary  <input type="text" name="Distance" value="{{flight.Distance}}">
+    <br>
+Employee Address  <input type="text" name="Fuelquantity" value="{{flight.Fuelquantity}}">
+    <br>
+    {% csrf_token %}
+<input type="submit" value="Update Flightinfo">
+</form>
+
+{% endblock %}
+</html>

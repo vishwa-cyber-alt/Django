@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid Red;
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
+{% extends 'base.html' %}
+{% block context %}
+
+<table align="center">
+    <caption><h1>Flightinfo</h1></caption>
+    <thead>
+        <th>sno.</th>
+        <th>Flightnumber</th>
+        <th>Destination</th>
+        <th>Distance</th>
+        <th>Fuelquantity</th>
+        <th>Update/Delete</th>
+    </thead>
+    <tr>
+    {% for data in flight %}
+        <td align="center">{{forloop.counter}}</td>
+        <td align="center">{{data.Flightnumber}}</td>
+        <td>{{data.Destination}}</td>
+        <td align="right">{{data.Distance}}</td>
+        <td>{{data.Fuelquantity}}</td>
+        <td><a href="./update/{{data.id}}">Update</a> <a href="./delete/{{data.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+<br>
+<br>
+    <a href = "./home"><button type="button"><h3>Home</h3></button> </a>
+    {% endblock %}
+
+</body>
+</html>
